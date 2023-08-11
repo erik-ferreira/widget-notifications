@@ -1,5 +1,6 @@
 import { Notification } from "./Notification"
 import { HeaderSection } from "./HeaderSection"
+import { Rocket, X } from "lucide-react"
 
 export function Widget() {
   return (
@@ -15,9 +16,25 @@ export function Widget() {
         <HeaderSection text="Recentes" />
 
         <div className="divide-y-2 divide-zinc-300 dark:divide-zinc-950">
-          <Notification />
+          <Notification.Root>
+            <Notification.Icon icon={Rocket} />
+            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat." />
+          </Notification.Root>
 
-          <Notification hasAction />
+          <Notification.Root>
+            <Notification.Icon icon={Rocket} />
+            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat." />
+            <Notification.Actions>
+              <Notification.ActionButton
+                icon={X}
+                className="bg-zinc-400 hover:bg-zinc-500 dark:bg-zinc-800 dark:hover:bg-zinc-700"
+              />
+              <Notification.ActionButton
+                icon={Rocket}
+                className="bg-violet-500 hover:bg-violet-600"
+              />
+            </Notification.Actions>
+          </Notification.Root>
         </div>
       </div>
 
@@ -25,9 +42,15 @@ export function Widget() {
         <HeaderSection text="Antigas" />
 
         <div className="divide-y-2 divide-zinc-300 dark:divide-zinc-950">
-          <Notification />
+          <Notification.Root>
+            <Notification.Icon icon={Rocket} />
+            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat." />
+          </Notification.Root>
 
-          <Notification />
+          <Notification.Root>
+            <Notification.Icon icon={Rocket} />
+            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat." />
+          </Notification.Root>
         </div>
       </div>
     </div>
